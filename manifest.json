@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "safloresmo.ntfy",
+  "name": "ntfy",
+  "version": "1.1.0",
+  "author": "safloresmo",
+  "license": "MIT",
+  "description": "Receive your ntfy notifications from one or several servers (ntfy.sh or your own): a desktop notification for every message and a panel with the history, links and attachments. Servers and topics are edited in the panel. English by default, Spanish when the system locale says so.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "ntfy",
+    "description": "ntfy push notifications in the bar.",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "notify": true,
+      "minPriority": 1,
+      "keep": 200
+    },
+    "schema": [
+      {
+        "key": "notify",
+        "type": "boolean",
+        "label": "Desktop notifications",
+        "defaultValue": true,
+        "description": "Send a desktop notification for every incoming message. The panel keeps the history either way."
+      },
+      {
+        "key": "minPriority",
+        "type": "integer",
+        "label": "Minimum priority to notify",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "defaultValue": 1,
+        "description": "ntfy priority (1 min … 5 max) from which to notify. Below it, history only."
+      },
+      {
+        "key": "keep",
+        "type": "integer",
+        "label": "Messages to keep",
+        "min": 20,
+        "max": 1000,
+        "step": 10,
+        "defaultValue": 200,
+        "description": "History cap in ~/.local/state/sfm/ntfy/. Servers and topics are edited with the panel's gear (~/.config/sfm/ntfy.conf)."
+      }
+    ]
+  }
+}

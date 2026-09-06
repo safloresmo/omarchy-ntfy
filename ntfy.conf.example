@@ -1,0 +1,27 @@
+# Suscripciones de sfm.ntfy: ~/.config/sfm/ntfy.conf, permisos 600.
+#
+# Lo normal es no tocar este fichero: el engranaje del panel lo escribe. Pero
+# se puede editar a mano; el oyente se da cuenta solo y reconecta.
+#
+#   install -m 600 ntfy.conf.example ~/.config/sfm/ntfy.conf
+#
+# Una sección por servidor. El nombre entre corchetes es el que sale en el
+# panel junto a cada mensaje cuando hay más de un servidor.
+
+[ntfy.sh]
+servidor = https://ntfy.sh
+temas = un-nombre-largo-y-raro, otro-tema
+
+# Un servidor propio con temas protegidos: token de acceso (Cuenta › Tokens
+# de acceso en la web de ntfy, o `ntfy token add <usuario>` en el servidor)…
+[casa]
+servidor = https://ntfy.midominio.es
+temas = taller, alarma
+token = tk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# …o usuario y clave. Si hay token, el usuario se ignora.
+[trabajo]
+servidor = https://ntfy.empresa.es
+temas = despliegues
+usuario = sfm
+clave = ...
